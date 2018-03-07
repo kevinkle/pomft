@@ -1,0 +1,6 @@
+[submodule "Jellyfish"]
+	path = Jellyfish
+	url = https://github.com/gmarcais/Jellyfish.git
+[submodule "lemongraph"]
+	path = lemongraph
+	url = https://github.com/NationalSecurityAgency/lemongraph.git
