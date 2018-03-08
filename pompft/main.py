@@ -32,19 +32,19 @@ def _seed_graph(seq, G):
             # Continue.
             while seq[q] != '-' or q == len(seq)-1:
                 q += 1
-            # Found unknown, create a continuous node.
-            # Nodes are identified by end position.
-            G.add_node('{0}'.format(q-1), seq=seq[p:q-1])
-            # Advance p. This will trip else on the next loop.
-            p = q
-            q += 1
+            # Found unknown, store the seq connecting them in an edge.
+            # Using int of the start/stop as the nodes.
+            G.add_edge(p, q-1, seq=seq[p:q-1])
         else:
-            # Advance q, and then create an edge.
+            # Advance q, and then create a '-' edge.
             while seq[q] == '-' or q == len(seq)-1:
                 q += 1
-            G.add_edge()
+            G.add_edge(p, q-1, seq='-')
+        # Advance p. This will trip else on the next loop.
+        p = q
+        q += 1
 
-def graph_kmers(records):
+def graph(records):
     G = nx.MultiGraph()
 
 def _np_kmers(seq, k=5):
