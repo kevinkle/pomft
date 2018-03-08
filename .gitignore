@@ -10,7 +10,7 @@
 /.doit.db.dir
 
 # Data Files
-data/*
+# data/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

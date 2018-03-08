@@ -1,0 +1,7 @@
+organism: Escherichia species strain 
+contigs: 112
+bases: 5163078
+tmRNA: 1
+repeat_region: 2
+tRNA: 73
+CDS: 4837

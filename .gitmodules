@@ -4,3 +4,9 @@
 [submodule "lemongraph"]
 	path = lemongraph
 	url = https://github.com/NationalSecurityAgency/lemongraph.git
+[submodule "prokka"]
+	path = prokka
+	url = https://github.com/tseemann/prokka.git
+[submodule "Roary"]
+	path = Roary
+	url = https://github.com/sanger-pathogens/Roary.git

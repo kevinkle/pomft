@@ -28,7 +28,7 @@ def _np_kmers(seq, start, stop, k=5):
     return gen
 
 def _panseq_positions(record_id):
-    pattern = r'(?:\(.)[0-9]+\.\.[0-9]+\)'
+    pattern = r'\(.[0-9]*\.\.[0-9]*\)'
     bracketed = re.search(pattern, record_id).group()
     # TODO: clean this up
     l = bracketed.split('..')
@@ -38,6 +38,7 @@ def _panseq_positions(record_id):
 
 def _panseq_kmers(records):
     for record in records:
+        print(record.id)
         seq = record.seq
         start, stop = _panseq_positions(record.id)
         np_a = _np_kmers(seq, start, stop)

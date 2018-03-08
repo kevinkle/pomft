@@ -16,3 +16,7 @@ Right now, we focus on the storing and updating a pre-computed pangenome.
 It might be possible to extend this method to create the pangenome in the beginning too, as nodes will naturally cluster by the number / weight (occurrence) of the edges when the graph is updated.
 
 lemongraph also provides historical views of the graph, and there might be a way to extract meaningful data out of the differences as well.
+
+# Sample data
+
+The .fasta files was annotated using Prokka and the pangenome generated with Roary following https://github.com/microgenomics/tutorials/blob/master/pangenome.md (except for Escherichia).
