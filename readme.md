@@ -1,9 +1,13 @@
 # What is this?
 
-A method for storing and updating prokaryotic pangenomes using a [Li-Stephens model](https://www.ncbi.nlm.nih.gov/pubmed/14704198), [effectively](https://www.ncbi.nlm.nih.gov/pubmed/27769991) a hidden markov model.
+A method for storing and updating prokaryotic pangenomes using a quasi-[Li-Stephens model](https://www.ncbi.nlm.nih.gov/pubmed/14704198), [effectively](https://www.ncbi.nlm.nih.gov/pubmed/27769991) a hidden markov model.
 The storage is handled using [lemongraph](https://github.com/NationalSecurityAgency/lemongraph), a lmdb-backed graph store, and prototyped with [networkx](https://github.com/networkx/networkx).
-We use a k-mer approach as described in [Graphtyper](https://github.com/DecodeGenetics/graphtyper), namely 5-mers with one overlapping character on either end.
-However, instead of using a directed acyclic graph, we use a HMM as it benefits updating the graph - with new or existing edges have changing weights which ties into search performance (& possibly other uses).
+We incorporate elements from [graphtyper](https://github.com/DecodeGenetics/graphtyper)'s directed acyclic graph, along with emission probabilities from a Li-Stephens model.
+(graphtyper also has an interesting k-mer approach for indexing, namely 5-mers with one overlapping character on either end.)
+When updating the graph with different aligned haplotypes, our HMM can accommodate how common specific segments are in the edge weights which isn't possible with a DAG.
+When sequence reads are realigned, a HMM may also be better for unindexed search (& possibly other uses).
+
+Uses an aligned core genome, either `core_gene_alignment.aln` from Roary or `snp.phylip` from Panseq (I think???).
 
 # Installation
 
@@ -19,4 +23,4 @@ lemongraph also provides historical views of the graph, and there might be a way
 
 # Sample data
 
-The .fasta files was annotated using Prokka and the pangenome generated with Roary following https://github.com/microgenomics/tutorials/blob/master/pangenome.md (except for Escherichia).
+The .fasta files was annotated using Prokka and the pangenome generated with Roary following https://github.com/microgenomics/tutorials/blob/master/pangenome.md (except with Escherichia).
