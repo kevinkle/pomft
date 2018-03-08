@@ -1,5 +1,9 @@
 # What is this?
 
+Currently a half-empty repository.
+
+# What is this suppose to be?
+
 A method for storing and updating prokaryotic pangenomes using a quasi-[Li-Stephens model](https://www.ncbi.nlm.nih.gov/pubmed/14704198), [effectively](https://www.ncbi.nlm.nih.gov/pubmed/27769991) a hidden markov model.
 The storage is handled using [lemongraph](https://github.com/NationalSecurityAgency/lemongraph), a lmdb-backed graph store, and prototyped with [networkx](https://github.com/networkx/networkx).
 We incorporate elements from [graphtyper](https://github.com/DecodeGenetics/graphtyper)'s directed acyclic graph, along with emission probabilities from Li-Stephens.
